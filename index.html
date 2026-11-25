@@ -1,0 +1,119 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskly | Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <h2 class="logo">✦ TASKLY</h2>
+        <p class="menu-title">MENU</p>
+
+        <button class="nav-btn active" data-filter="all">
+            🏠 Dashboard
+        </button>
+        <button class="nav-btn" data-filter="all">
+            📋 All Tasks
+        </button>
+        <button class="nav-btn" data-filter="pending">
+            ⏳ Pending
+        </button>
+        <button class="nav-btn" data-filter="completed">
+            ✅ Completed
+        </button>
+
+        <div class="sidebar-bottom">
+            <div class="quote">
+                ✨ Stay focused!<br>
+                <small>Make today count.</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="date" id="todayDate"></p>
+                <h1>Good Day! 👋</h1>
+                <p class="subtitle">Let's make today productive.</p>
+            </div>
+            <div class="profile">A</div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card purple">
+                <span>📋</span>
+                <p>Total Tasks</p>
+                <h2 id="totalTasks">0</h2>
+            </div>
+
+            <div class="stat-card pink">
+                <span>⏳</span>
+                <p>Pending Tasks</p>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+
+            <div class="stat-card green">
+                <span>🎉</span>
+                <p>Completed</p>
+                <h2 id="completedTasks">0</h2>
+            </div>
+        </section>
+
+        <section class="progress-card">
+            <div class="progress-heading">
+                <div>
+                    <h3>Daily Progress</h3>
+                    <p>Keep going, you're doing great!</p>
+                </div>
+                <h2 id="progressPercent">0%</h2>
+            </div>
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </section>
+
+        <section class="task-section">
+            <div class="section-heading">
+                <div>
+                    <h2>My Tasks ✨</h2>
+                    <p>Manage your daily activities</p>
+                </div>
+            </div>
+
+            <div class="task-form">
+                <input type="text" id="taskInput"
+                    placeholder="What do you need to do?">
+
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <button id="addButton">+ Add Task</button>
+            </div>
+
+            <div class="filter-label" id="filterLabel">
+                All Tasks
+            </div>
+
+            <ul id="taskList"></ul>
+        </section>
+
+        <footer>
+            Made with 💜 | Taskly Productivity App
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
