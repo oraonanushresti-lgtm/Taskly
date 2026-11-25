@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f1ff;
+    color: #30234a;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 245px;
+    background: linear-gradient(180deg, #51218b, #7139b5);
+    color: white;
+    padding: 35px 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 27px;
+    margin-bottom: 55px;
+}
+
+.menu-title {
+    color: #d8c1f4;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.nav-btn {
+    background: transparent;
+    color: #eee1ff;
+    text-align: left;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(4px);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.quote {
+    background: rgba(255,255,255,0.15);
+    padding: 18px;
+    border-radius: 15px;
+    line-height: 2;
+}
+
+.quote small {
+    color: #e2d0f8;
+}
+
+/* MAIN AREA */
+
+.main-content {
+    flex: 1;
+    padding: 35px 45px;
+    min-width: 0;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.date {
+    color: #926bb8;
+    font-size: 13px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.subtitle {
+    color: #9486a7;
+    font-size: 14px;
+}
+
+.profile {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #8739ce, #e47bbd);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* STAT CARDS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    padding: 23px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(70,30,110,0.06);
+}
+
+.stat-card span {
+    font-size: 25px;
+}
+
+.stat-card p {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #8b7e9c;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.purple { border-bottom: 4px solid #9560db; }
+.pink { border-bottom: 4px solid #ed82b2; }
+.green { border-bottom: 4px solid #55bd9c; }
+
+/* PROGRESS */
+
+.progress-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(70,30,110,0.06);
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.progress-heading p {
+    color: #9486a7;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.progress-heading h2 {
+    color: #8b45ce;
+}
+
+.progress-track {
+    background: #eee5f8;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #8739ce, #e47bbd);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* TASKS */
+
+.task-section {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(70,30,110,0.06);
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 22px;
+}
+
+.section-heading p {
+    color: #9486a7;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.task-form {
+    display: flex;
+    gap: 10px;
+}
+
+input, select {
+    padding: 13px;
+    border: 1px solid #e7dcf3;
+    border-radius: 10px;
+    font-family: inherit;
+    outline: none;
+    min-width: 0;
+}
+
+input {
+    flex: 1;
+}
+
+input:focus, select:focus {
+    border-color: #9955d6;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#addButton {
+    background: linear-gradient(135deg, #8739ce, #ba6be0);
+    color: white;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#addButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px #d7b6f0;
+}
+
+.filter-label {
+    font-weight: 600;
+    margin: 25px 0 15px;
+    font-size: 14px;
+}
+
+#taskList {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #faf7ff;
+    border: 1px solid #f0e7fa;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.task-check {
+    width: 18px;
+    height: 18px;
+    accent-color: #8739ce;
+    cursor: pointer;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-name {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.task-name.done {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.priority-tag {
+    font-size: 10px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.High { background: #ffe0e5; color: #d43e61; }
+.Medium { background: #fff0d5; color: #bb821b; }
+.Low { background: #dcf5e9; color: #278b62; }
+
+.delete-btn {
+    background: #ffe5eb;
+    color: #df4267;
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+
+.delete-btn:hover {
+    background: #ffd1dc;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: #a194b1;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #a194b1;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 850px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        padding: 25px 20px;
+    }
+}
+
+@media(max-width: 650px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .menu-title,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .nav-btn {
+        display: inline-block;
+        width: auto;
+        padding: 9px;
+        font-size: 11px;
+        margin: 3px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .task-form {
+        flex-wrap: wrap;
+    }
+
+    .task-form input {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .main-content {
+        padding: 20px 14px;
+    }
+}
